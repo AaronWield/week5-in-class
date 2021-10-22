@@ -1,0 +1,76 @@
+/* Navigation Styling */
+.ct-nav{
+    display: flex;
+    justify-content: center;
+}
+.ct-nav img{
+    width: 25%;
+    max-width: 100%;
+    margin-left: 2vw;
+}
+#horizontal-list{
+    min-width: 55vw;
+    list-style: none;
+    padding-top: 6vh;
+}
+#horizontal-list li, #horizontal-list a{
+    display: inline;
+    text-decoration: none;
+    padding: 0.5vw;
+    color: black;
+}
+#horizontal-list a:nth-last-child(1){
+    border: 2px solid blue;
+    border-radius: 10px;
+    margin-right:0.2vw;
+}
+
+/* Header Section */
+#header-text{
+    padding: 2vw;
+}
+.header-image{
+    width: 85%;
+    max-width: 100%;
+}
+
+/* Middle Section */
+#middle-text{
+    text-align: center;
+    padding: 10vh;
+}
+#middle-text h2{
+    padding: 1.5vw;
+}
+
+/* Features Section */
+#api-image, #graphql-image, #database-image{
+    display: block;
+    margin: auto;
+    margin-bottom: 10vh;
+}
+#features-section{
+    margin: 8vh;
+}
+
+/* Community Section */
+#drone-image{
+    width: 50%;
+    max-width: 75%;
+    margin-left: 3vw;
+}
+
+/* Footer Section */
+.footer-text-flex{
+    display: flex;
+    flex-direction: column;
+    margin-top: 3vw;  
+}
+#footer-logo{
+    width: 100%;
+    max-width: 100%;
+}
+#footer{
+    border-top: 3px solid black;
+    margin-top: 20%;
+}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Auth Failed conditional HTML rendering -->
+{% with messages = get_flashed_messages(with_categories = true) %}
+    {% if messages %}
+        {% for cat, msg in messages %}
+            {% if cat == 'auth-failed' %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ msg }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+<h1>Sign In Here</h1>
+<main class="container">
+    <div class="row">
+        <aside class="col-12 col-md-6">
+            <h2>Sign in to Your Account</h2>
+<!-- most of actual html below is produced by flask form -->
+        </aside>
+        <form method="POST">
+<!-- accesses the SECRET_KEY variable for security purposes -->
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <fieldset id="email-field">
+                    {{ form.email.label }}
+                    {{ form.email(class = "form-control", placeholder = "Place Email Here") }}
+                </fieldset>
+                <fieldset id="email-field">
+                    {{ form.password.label }}
+                    {{ form.password(class = "form-control", placeholder = "Place Password Here") }}
+                </fieldset>
+<!-- Submit button from Flask Form -->
+                {{ form.submit_button(class = "btn btn-primary btn-block") }}
+            </div>
+        </form>
+    </div>
+</main>
+
+{% endblock content %}
